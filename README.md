@@ -1,2 +1,2 @@
 # tugas-ukk-kasir
-kasir toko / resto dengan react + node js
+kasir toko / resto dengan php native + bostrapp
