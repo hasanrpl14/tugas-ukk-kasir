@@ -1,4 +1,11 @@
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+<?php
+    session_start();
+    if(!empty($_SESSION['username_tugas'])){
+        header('location:home.php');
+    }
+?>
+
 
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -156,19 +163,19 @@
 
     
 <main class="form-signin w-100 m-auto">
-  <form class="needs-validation" novalidate> <!-- ini class buat validate from jika belum di isi-->
+  <form action="proses/proses login.php" method="POST" class="needs-validation" novalidate> <!-- ini class buat validate from jika belum di isi-->
     <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
     <h1 class="h3 mb-3 fw-normal text-center">Login Bang</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+      <input name="username" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
       <label for="floatingInput">Email address</label>
       <div class="invalid-feedback">
         Silahkan Isi Email
       </div>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
       <label for="floatingPassword">Password</label>
       <div class="invalid-feedback">
         Silahkan Isi Password
@@ -181,7 +188,7 @@
         Remember me
       </label>
     </div> -->
-    <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
+    <button class="btn btn-primary w-100 py-2" type="submit" name="submit_validasi" value="a">Login</button>
     <p class="mt-5 mb-3 text-body-secondary">&copy; Hasan Abdi Salam</p>
   </form>
 </main>
