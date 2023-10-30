@@ -18,6 +18,7 @@ include "koneksi.php";
     // ini variabel untuk menyimpan atau mengambi dari data di atas  $query = mysqli_query
         if($hasil){
             $_SESSION['username_tugas'] = $username;
+            $_SESSION['id_level_tugas'] = $hasil['id_level'];
             header('location:../index.php?x=home');
         }else{ ?>
             <script>

@@ -1,9 +1,14 @@
 <?php
-    session_start();
+    // session_start();
     if(empty($_SESSION['username_tugas'])){
-        header('location:login.php');
-        // exit();
+        header('location:login.php');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        // exit();
     }
+    include "proses/koneksi.php";
+        
+    $query = mysqli_query($conn, "SELECT * FROM user WHERE username = '$_SESSION[username_tugas]' ");
+    // ini untuk mengambil data user  setelah login dari session
+    $hasil = mysqli_fetch_array($query);
+
 ?>
 
 <!doctype html>
