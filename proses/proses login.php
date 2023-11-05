@@ -10,7 +10,7 @@ include "koneksi.php";
     $password = (isset($_POST['password'])) ? md5(htmlentities($_POST['password'])) : "" ;
 
     if(!empty($_POST['submit_validasi'])){
-        
+        // submit_validasi dari button login dengan name berisi variabel submit_validasi
     $query = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username' && password = '$password' ");
     // untuk menghubungkan dan memanggil data dari database dan isi dari dalam tabel user
 

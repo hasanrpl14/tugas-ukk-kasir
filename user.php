@@ -33,13 +33,13 @@ while ($record = mysqli_fetch_array($query)) {
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-floating mb-3">
-                                            <input type="text" name="nama_user" class="form-control" id="floatingInput" placeholder="nama anda...">
+                                            <input type="text" name="nama" class="form-control" id="floatingInput" placeholder="nama anda...">
                                             <label for="floatingInput">Nama</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                            <input type="email" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
                                             <label for="floatingInput">Username Email</label>
                                         </div>
                                     </div>
@@ -47,8 +47,8 @@ while ($record = mysqli_fetch_array($query)) {
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="form-floating mb-3">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Pilih Level User</option>
+                                            <select class="form-select" aria-label="Default select example" name="id_level">
+                                                <option selected value="0">Pilih Level User</option>
                                                 <option value="1">Admin</option>
                                                 <option value="2">Kasir</option>
                                                 <option value="3">Pelayan</option>
@@ -67,7 +67,7 @@ while ($record = mysqli_fetch_array($query)) {
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-floating mb-3">
-                                            <input type="" class="form-control" id="floatingPassword" placeholder="***">
+                                            <input type="" class="form-control" id="floatingPassword" placeholder="***" name="password">
                                             <label for="floatingPassword">Password</label>
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@ while ($record = mysqli_fetch_array($query)) {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="submit" class="btn btn-primary" name="input_user_validate">Save changes</button>
                         </div>
                         </form>
                         <!-- form akhir untuk tambah data user -->
@@ -178,7 +178,7 @@ while ($record = mysqli_fetch_array($query)) {
                                 <tr>
                                     <th scope="row"><?php echo $no++ ?></th>
                                     <td>
-                                        <?php echo $row['nama_user'] ?>
+                                        <?php echo $row['nama'] ?>
                                     </td>
                                     <td>
                                         <?php echo $row['username'] ?>
